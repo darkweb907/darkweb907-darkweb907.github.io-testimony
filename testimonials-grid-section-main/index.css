@@ -1,0 +1,160 @@
+*{
+    --grow: hsl(210, 46%, 95%);
+    --gray:hsl(0, 0%, 81%);
+    --violet: hsl(263, 55%, 52%);
+    --blue: hsl(217, 19%, 35%);
+    --blow: hsl(219, 29%, 14%);
+    --white:hsl(0, 0%, 100%);
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+img{
+    
+    max-width: 70%;
+    height: auto;
+    border-radius:50px;
+}
+.container{
+    --width:100%;
+    max-width:calc(var(--width) - 320px);
+    margin:0 auto;
+}
+.grid{
+    align-content: center;
+    min-height: 100vh;
+    grid-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+}
+.card {
+    background-color:hsl(0, 0%, 100%);
+    padding: 1.3rem;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.one{
+    background: var(--violet) url(images/bg-pattern-quotation.svg) no-repeat top right 2rem;
+    grid-column: 1/ span 2;
+}
+.two{
+    background-color: var(--blue);
+}
+.three{
+    grid-column-start: 4;
+    grid-row: 1/ span 2;
+}
+.five{
+    background-color: var(--blow);
+    grid-column: 2/ span 2
+}
+.ben{
+    align-items: center;
+    display:flex;
+}
+.name{
+    color: var(--gray);
+    margin-left: 1rem;
+}
+.three .name, .four .name{
+    color: var(--blow);
+}
+h1{
+    font-size:1.4rem;
+    margin: 1.2rem 0;
+    color: var(--white);
+}
+.three h1, .four h1{
+    margin: 1.3rem 0;
+    color: var(--blow);
+}
+p{
+    line-height:1.3rem;
+    color: var(--grow);
+    opacity:70%;
+}
+.three p, .four p{
+    line-height: 1.4rem;
+    margin: 1.8rem 0;
+    color: var(--blue);
+    opacity: 70%;
+}
+@media (max-width:1200px) {
+    .container{
+        --width:100%;
+        min-width:calc(var(--width) - 100px);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid{
+        grid-template-rows: repeat(3,1fr);
+        padding:2rem 0;
+    display: grid;
+    }
+    .three{
+        grid-row-start: 3;
+    grid-column: 1/ span 4;
+    }
+    .two{
+        grid-row-start: 1;
+        grid-column:3/ span 2
+    }
+    .five {
+        background-color: var(--blow);
+        grid-column: 3/ span 2;
+    }
+    .four{
+        grid-column: 1/span 2;
+    }
+}
+
+ @media (max-width: 665px) {
+    .container{
+        --width:100%;
+        min-width:calc(var(--width) - 100px);
+        margin:0 auto;
+    }
+    .grid{
+        grid-template-columns: 1fr;
+        padding:2rem 0;
+    grid-template-rows: 1fr auto auto 1fr 1fr;
+    grid-row-gap: 32px;
+    display: grid;
+    grid-template-areas: 
+    "one one one one"
+    "two two two two"
+    "four four four four"
+    "five five five five"
+    "three three three three";
+    }
+    .one{
+        grid-area: one;
+    }
+    .two{
+        grid-area: two;
+    }
+    .three{
+        grid-area:three;
+    }
+    .four{
+        grid-area: four;
+    }
+    .five{
+        grid-area: five;
+    }
+    h1{
+        line-height: 2.2rem;
+        font-size:1.5rem;
+        margin: 1.6rem 0;
+        color: var(--white);
+    }
+    p{
+        line-height:1.5rem;
+        color: var(--grow);
+        opacity:70%;
+    }
+    
+ }
