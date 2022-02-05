@@ -158,3 +158,10 @@ p{
     }
     
  }
+ @media (max-width: 400px) {
+     .container{
+        --width:100%;
+        min-width:calc(var(--width) - 30px);
+        margin:0 auto;
+     }
+ }
